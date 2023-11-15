@@ -1,4 +1,4 @@
-````# API DE INFORMAÇÕES DE LOJAS - TRABALHO INFNET
+# API DE INFORMAÇÕES DE LOJAS - TRABALHO INFNET
 
 Projeto conceito para utilização de Serviço Rest com Spring Boot
 
@@ -16,6 +16,8 @@ Spring Boot na versão 3.1.4:  (https://mvnrepository.com/artifact/org.springfra
 Maven 3.9.5: (https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz)
 
 Eclipse ou Intellij
+
+Docker: Para Rodar o arquivo docker-compose (Contido no projeto principal) que contém a imagem do mysql para facilitar a integração
 
 Postman para Testes : (https://www.postman.com/downloads/)
 ```

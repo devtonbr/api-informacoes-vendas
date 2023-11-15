@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "2097185e-9091-48a4-b11e-b73d8dff8062",
+		"name": "InformacoesApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17710409"
+	},
+	"item": [
+		{
+			"name": "/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/vendas/informacoes/v1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vendas",
+						"informacoes",
+						"v1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/vendas/informacoes/v1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vendas",
+						"informacoes",
+						"v1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/vendas/informacoes/v1/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vendas",
+						"informacoes",
+						"v1",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/listar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pagina\": 1,\r\n    \"filtro\": \"Loja Centrp\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vendas/informacoes/v1/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vendas",
+						"informacoes",
+						"v1",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/salvar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"nomeLoja\" : \"Loja Tijuca\",\r\n    \"unidadeLoja\" : \"Unidade Tijuca\",\r\n    \"tipoLoja\" : \"PROPRIA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vendas/informacoes/v1/salvar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vendas",
+						"informacoes",
+						"v1",
+						"salvar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

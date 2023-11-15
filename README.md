@@ -1,9 +1,64 @@
-    # API VENDAS - INFORMAÇÕES
+# API DE INFORMAÇÕES DE LOJAS - TRABALHO INFNET
 
-### Reference Documentation
-Api responsável para manter os dados das informações das lojas
+Projeto conceito para utilização de Serviço Rest com Spring Boot
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.5/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.5/maven-plugin/reference/html/#build-image)
+## Iniciando o Projeto
 
+O projeto contém alguns exemplos de serviço REST. O projeto já está configurado em modo standalone
+
+### Pré requisitos
+
+```
+Java 17 : ([https://www.oracle.com/br/java/technologies/javase/jdk17-archive-downloads.html]);
+
+Spring Boot na versão 3.1.4:  (https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies/3.1.4);
+
+Eclipse ou Intellij
+
+Postman para Testes : (https://www.postman.com/downloads/)
+```
+
+## Rodando os Testes
+
+Utilize o postman Para rodar os testes.
+
+Collection estão na raiz do repositório.
+
+
+```
+InformacoesApi.postman_collection.json
+```
+
+## Rodando local
+
+Inicie com a classe Application.java
+
+## Deploy
+
+Basta executar o comando maven install
+
+Para rodar, vá na pasta target onde tem o artefato gerado e execute o comando:
+
+```
+java -jar api-informacoes-vendas-0.0.1-SNAPSHOT.jar
+```
+
+## Rodando via Docker (Precisa ter o Docker Instalado)
+
+Execute o comando para gerar a imagem via Docker
+
+```
+docker build -t api-informacoes-vendas .
+```
+
+Para executar o container, rode o comando abaixo:
+
+```
+docker run --name api-informacoes-vendas -p 8081:8081 api-informacoes-vendas:latest
+```
+
+Importante: Para rodar dentro do docker, é preciso obter o ip do container que rodando o mysql
+
+## Autores
+
+* **Clayton Morais de Oliveira** 

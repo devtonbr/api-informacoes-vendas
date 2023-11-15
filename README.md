@@ -1,4 +1,4 @@
-# API DE INFORMAÇÕES DE LOJAS - TRABALHO INFNET
+````# API DE INFORMAÇÕES DE LOJAS - TRABALHO INFNET
 
 Projeto conceito para utilização de Serviço Rest com Spring Boot
 
@@ -12,6 +12,8 @@ O projeto contém alguns exemplos de serviço REST. O projeto já está configur
 Java 17 : ([https://www.oracle.com/br/java/technologies/javase/jdk17-archive-downloads.html]);
 
 Spring Boot na versão 3.1.4:  (https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies/3.1.4);
+
+Maven 3.9.5: (https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz)
 
 Eclipse ou Intellij
 
@@ -64,3 +66,4 @@ docker run --name api-informacoes-vendas -p 8081:8081 \
 ## Autores
 
 * **Clayton Morais de Oliveira** 
+````

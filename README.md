@@ -54,10 +54,12 @@ docker build -t api-informacoes-vendas .
 Para executar o container, rode o comando abaixo:
 
 ```
-docker run --name api-informacoes-vendas -p 8081:8081 api-informacoes-vendas:latest
+docker run --name api-informacoes-vendas -p 8081:8081 \
+    -e SPRING_DATASOURCE_PASSWORD=<SENHA DO BANCO> \
+    -e SPRING_DATASOURCE_USERNAME=<USUARIO DE BANCO> \
+    -e MYSQL_HOST= <IP DO BANCO> \ 
+    api-informacoes-vendas:latest
 ```
-
-Importante: Para rodar dentro do docker, é preciso obter o ip do container que rodando o mysql
 
 ## Autores
 

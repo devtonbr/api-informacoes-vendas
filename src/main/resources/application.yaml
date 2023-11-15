@@ -25,4 +25,3 @@ spring:
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/vendas?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-

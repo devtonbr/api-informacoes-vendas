@@ -1,8 +1,14 @@
 server:
   servlet:
     context-path: /
-  port : 8081
+  port: 8081
 spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  main:
+    banner-mode: 'OFF'
   jpa:
     properties:
       hibernate:
@@ -19,3 +25,11 @@ spring:
     tomcat:
       max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/vendas?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic

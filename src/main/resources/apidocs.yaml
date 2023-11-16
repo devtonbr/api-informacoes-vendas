@@ -1,0 +1,326 @@
+openapi: 3.0.2
+info:
+  title: api-informacoes-vendas
+  version: 1.0.0
+  description: Api responsável pelas informações da loja
+paths:
+  /api/vendas/informacoes/v1/listar:
+    get:
+      tags:
+        - Informacao
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListInformacaoResponse'
+          description: SUCESSO
+      operationId: filtrar
+      summary: Busca todas informações
+      description: Busca todas informações
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FiltroBuscaRequest'
+      tags:
+        - Informacao
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListInformacaoResponse'
+          description: SUCESSO
+      operationId: filtrarPorNome
+  '/api/vendas/informacoes/v1/{id}':
+    get:
+      tags:
+        - Informacao
+      parameters:
+        -
+          name: id
+          schema:
+            type: number
+          in: path
+          required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InformacaoResponse'
+          description: SUCESSO
+      operationId: obterInformacaoPorId
+      summary: Obtém as informações
+      description: Obtém as informações
+    delete:
+      tags:
+        - Informacao
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+          description: SUCESSO
+      operationId: excluir
+      summary: Remove as informações
+      description: Remove as informações
+    parameters:
+      -
+        name: id
+        description: Identificador da informação
+        schema:
+          type: number
+        in: path
+        required: true
+  /api/vendas/informacoes/v1/salvar:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InformacaoRequest'
+      tags:
+        - Informacao
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+          description: SUCESSO
+      operationId: salvar
+      summary: Salva as informações
+      description: Salva as informações
+components:
+  schemas:
+    PageableResponse:
+      title: Root Type for PageableResponse
+      description: ''
+      type: object
+      properties:
+        pageNumber:
+          format: int32
+          type: integer
+        pageSize:
+          format: int32
+          type: integer
+        sort:
+          $ref: '#/components/schemas/SortResponse'
+          properties:
+            empty:
+              type: boolean
+            sorted:
+              type: boolean
+            unsorted:
+              type: boolean
+        offset:
+          format: int32
+          type: integer
+        unpaged:
+          type: boolean
+        paged:
+          type: boolean
+      example:
+        pageNumber: 0
+        pageSize: 10
+        sort:
+          empty: false
+          sorted: true
+          unsorted: false
+        offset: 0
+        unpaged: false
+        paged: true
+    SortResponse:
+      title: Root Type for SortResponse
+      description: ''
+      type: object
+      properties:
+        empty:
+          type: boolean
+        sorted:
+          type: boolean
+        unsorted:
+          type: boolean
+      example:
+        empty: false
+        sorted: true
+        unsorted: false
+    FiltroBuscaRequest:
+      title: Root Type for FiltroBuscaRequest
+      description: ''
+      type: object
+      properties:
+        pagina:
+          format: int32
+          type: integer
+        filtro:
+          type: string
+        cacheFiltro:
+          type: string
+      example:
+        pagina: 1
+        filtro: Loja
+        cacheFiltro: Loja
+    StatusResponse:
+      title: Root Type for StatusResponse
+      description: ''
+      type: object
+      properties:
+        codigo:
+          format: int32
+          type: integer
+        resposta:
+          type: string
+      example:
+        codigo: 0
+        resposta: SUCESSO
+    ListInformacaoResponse:
+      title: Root Type for ListResponse
+      description: ''
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/InformacaoResponse'
+        pageable:
+          $ref: '#/components/schemas/PageableResponse'
+          properties:
+            pageNumber:
+              format: int32
+              type: integer
+            pageSize:
+              format: int32
+              type: integer
+            sort:
+              type: object
+              properties:
+                empty:
+                  type: boolean
+                sorted:
+                  type: boolean
+                unsorted:
+                  type: boolean
+            offset:
+              format: int32
+              type: integer
+            unpaged:
+              type: boolean
+            paged:
+              type: boolean
+        last:
+          type: boolean
+        totalPages:
+          format: int32
+          type: integer
+        totalElements:
+          format: int32
+          type: integer
+        first:
+          type: boolean
+        size:
+          format: int32
+          type: integer
+        number:
+          format: int32
+          type: integer
+        sort:
+          $ref: '#/components/schemas/SortResponse'
+          properties:
+            empty:
+              type: boolean
+            sorted:
+              type: boolean
+            unsorted:
+              type: boolean
+        numberOfElements:
+          format: int32
+          type: integer
+        empty:
+          type: boolean
+      example:
+        content:
+          -
+            id: 3
+            nomeLoja: Loja Barra
+            unidadeLoja: Unidade Barra
+            tipoLoja: PROPRIA
+          -
+            id: 2
+            nomeLoja: Loja Catete
+            unidadeLoja: Unidade Catete
+            tipoLoja: PROPRIA
+          -
+            id: 1
+            nomeLoja: Loja Centro
+            unidadeLoja: Unidade Centro
+            tipoLoja: PROPRIA
+          -
+            id: 4
+            nomeLoja: Loja Copacabana
+            unidadeLoja: Unidade Copacabana
+            tipoLoja: PROPRIA
+        pageable:
+          pageNumber: 0
+          pageSize: 10
+          sort:
+            empty: false
+            sorted: true
+            unsorted: false
+          offset: 0
+          unpaged: false
+          paged: true
+        last: true
+        totalPages: 1
+        totalElements: 4
+        first: true
+        size: 10
+        number: 0
+        sort:
+          empty: false
+          sorted: true
+          unsorted: false
+        numberOfElements: 4
+        empty: false
+    InformacaoRequest:
+      title: Root Type for InformacaoRequest
+      description: ''
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        nomeLoja:
+          type: string
+        unidadeLoja:
+          type: string
+        tipoLoja:
+          type: string
+      example:
+        id: 6
+        nomeLoja: Loja Tijuca
+        unidadeLoja: Unidade Tijuca
+        tipoLoja: PROPRIA
+    InformacaoResponse:
+      title: Root Type for InformacaoResponse
+      description: ''
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        nomeLoja:
+          type: string
+        unidadeLoja:
+          type: string
+        tipoLoja:
+          type: string
+      example:
+        id: 6
+        nomeLoja: Loja Tijuca
+        unidadeLoja: Unidade Tijuca
+        tipoLoja: PROPRIA

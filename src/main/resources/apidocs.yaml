@@ -34,13 +34,14 @@ paths:
                 $ref: '#/components/schemas/ListInformacaoResponse'
           description: SUCESSO
       operationId: filtrarPorNome
+      summary: Busca todas informações por nome da loja
+      description: Busca todas informações por nome da loja
   '/api/vendas/informacoes/v1/{id}':
     get:
       tags:
         - Informacao
       parameters:
-        -
-          name: id
+        - name: id
           schema:
             type: number
           in: path
@@ -69,8 +70,7 @@ paths:
       summary: Remove as informações
       description: Remove as informações
     parameters:
-      -
-        name: id
+      - name: id
         description: Identificador da informação
         schema:
           type: number
@@ -244,23 +244,19 @@ components:
           type: boolean
       example:
         content:
-          -
-            id: 3
+          - id: 3
             nomeLoja: Loja Barra
             unidadeLoja: Unidade Barra
             tipoLoja: PROPRIA
-          -
-            id: 2
+          - id: 2
             nomeLoja: Loja Catete
             unidadeLoja: Unidade Catete
             tipoLoja: PROPRIA
-          -
-            id: 1
+          - id: 1
             nomeLoja: Loja Centro
             unidadeLoja: Unidade Centro
             tipoLoja: PROPRIA
-          -
-            id: 4
+          - id: 4
             nomeLoja: Loja Copacabana
             unidadeLoja: Unidade Copacabana
             tipoLoja: PROPRIA

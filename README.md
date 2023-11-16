@@ -22,6 +22,14 @@ Docker: Para Rodar o arquivo docker-compose (Contido no projeto principal) que c
 Postman para Testes : (https://www.postman.com/downloads/)
 ```
 
+## Swagger
+
+Para acessar a documentação do Swagger, utilize o link abaixo (Local):
+
+```
+http://localhost:8081/swagger-ui/index.html
+```
+
 ## Rodando os Testes
 
 Utilize o postman Para rodar os testes.

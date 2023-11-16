@@ -9,6 +9,8 @@ spring:
     add-mappings: false
   main:
     banner-mode: 'OFF'
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:default}
   jpa:
     properties:
       hibernate:

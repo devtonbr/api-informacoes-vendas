@@ -57,6 +57,18 @@ java -jar api-informacoes-vendas-0.0.1-SNAPSHOT.jar
 
 ## Rodando via Docker (Precisa ter o Docker Instalado)
 
+
+Rodando via docker-compose
+
+IMPORTANTE: Não executar o docker-compose no projeto api-vendas para não
+gerar duplicidade
+
+Caso queira gerar o banco pelo banco, dentro da raiz do projeto,
+execute o comando abaixo:
+```
+docker-compose up
+```
+
 Execute o comando para gerar a imagem via Docker
 
 ```
@@ -70,6 +82,17 @@ docker run --name api-informacoes-vendas -p 8081:8081 \
     -e SPRING_DATASOURCE_PASSWORD=<SENHA DO BANCO> \
     -e SPRING_DATASOURCE_USERNAME=<USUARIO DE BANCO> \
     -e MYSQL_HOST= <IP DO BANCO> \ 
+    -e SPRING_PROFILES_ACTIVE=default
+    api-informacoes-vendas:latest
+```
+
+Obs: Se o banco de dados tiver rodando através 
+de docker-compose do projeto api-vendas, basta apenas definir
+a variavel MYSQL_HOST com o valor do ip do container.
+
+```
+docker run --name api-informacoes-vendas -p 8081:8081 \
+    -e MYSQL_HOST= <IP DO CONTAINER QUE ESTA RODANDO O BANCO> \ 
     api-informacoes-vendas:latest
 ```
 

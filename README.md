@@ -55,19 +55,24 @@ Para rodar, vá na pasta target onde tem o artefato gerado e execute o comando:
 java -jar api-informacoes-vendas-0.0.1-SNAPSHOT.jar
 ```
 
-## Rodando via Docker (Precisa ter o Docker Instalado)
-
-
-Rodando via docker-compose
+## Rodando via Docker compose (Precisa ter o Docker Instalado)
 
 IMPORTANTE: Não executar o docker-compose no projeto api-vendas para não
 gerar duplicidade
 
-Caso queira gerar o banco pelo banco, dentro da raiz do projeto,
+Caso queira gerar os artefatos, dentro da raiz do projeto,
 execute o comando abaixo:
+
 ```
 docker-compose up
 ```
+
+Este comando irá criar e subir o banco de dados e o projeto api-informacoes-vendas via docker.
+
+
+## Rodando via Docker (Precisa ter o Docker Instalado)
+
+Neste cenário é necessario subir o docker-compose no projeto api-vendas para gerar o banco, caso suba o mesmo via docker.
 
 Execute o comando para gerar a imagem via Docker
 
